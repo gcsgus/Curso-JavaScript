@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Teste de Nacionalidade</h1>
+    Insira o país que você nasceu: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="verificacao()">
+    <div id="país">
+
+    </div>
+    <script>
+        function verificacao(){
+            txtnac=document.getElementById('txtnac')
+            país=document.getElementById('país')
+            nac=txtnac.value.toLowerCase()//usar o toLowerCase() pro codigo nao considerar a palavra com minusculas ou maiusculas, uma palavra diferente.
+            
+            país.innerHTML=`<p>Nascido em <strong>${nac}</strong>.</p>` 
+            
+            if(nac=='brasil'){
+                país.innerHTML+='<p> Você é <strong>brasileiro!</strong> </p>'
+            }else{
+                país.innerHTML+='<p> Você é <strong>estrangeiro!</strong> </p>'
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
